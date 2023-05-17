@@ -19,12 +19,10 @@ import { trigger, style, transition, animate, state } from '@angular/animations'
     trigger('viewData', [
       transition(':enter', [
         animate(2000, style({
-          
+
         }))
       ])
     ])
   ]
 })
-export class HomeComponent {
-
-}
+export class HomeComponent { }

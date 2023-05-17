@@ -23,15 +23,15 @@
         </h3>
     </section>
     <!-- dar estilos para que tenga un alto que abarque casi la altura de la pagina con una imagen de fondo incluyendo la imagen proia -->
-    <section class="grid grid-rows-2 justify-items-end pl-24">
+    <section class="grid grid-rows-2 pl-24">
         <!-- dividida en 2 secciones o 2 columnas -->
-        <div class="justify-items-end">
+        <div>
             <!-- desarrollo de habilidades // definición de mi empleabilidad -->
             <!--  -->
             <!-- imagen en derecha junto con tecto inferior -->
             <img src="../../assets/img/profileIMG.jpg" alt="mi imagen" class="w-max h-auto">
         </div>
-        <div class="text-xl font-mono" @viewData>
+        <div class="text-xl font-mono " @viewData>
             <h1>⇧ I`m Lautaro Garcia.</h1>
             <h4 class="pl-11">Nickname Lechugaxthz.</h4>
             <h4 class="pl-20">Full-Stack Developer.</h4>
@@ -43,6 +43,8 @@
 <!-- texto relacional -->
 <aside class="text-3xl font-light flex justify-center">Passionated about Back-End & Front-End development</aside>
 <!-- contenido de experiencias -->
-<section>
-
+<br />
+<section class="p-4">
+    <h1 class="flex justify-center font-bold text-2xl">My Projects</h1>
+    <app-project-cards></app-project-cards>
 </section>
