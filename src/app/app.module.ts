@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectCardsComponent } from './home/project-cards/project-cards.component';
+import { ModalProjectComponent } from './home/modal-project/modal-project.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { ProjectCardsComponent } from './home/project-cards/project-cards.compon
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProjectCardsComponent
+    ProjectCardsComponent,
+    ModalProjectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

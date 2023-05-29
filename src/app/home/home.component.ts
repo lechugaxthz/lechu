@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, style, transition, animate, state } from '@angular/animations';
+import { MiDataDto } from '../dto/miData.dto';
+import { miData } from '../miData.component';
 
 @Component({
   selector: 'app-home',
@@ -25,4 +27,10 @@ import { trigger, style, transition, animate, state } from '@angular/animations'
     ])
   ]
 })
-export class HomeComponent { }
+export class HomeComponent {
+  userData: MiDataDto;
+
+  constructor() {
+    this.userData = miData
+  }
+}

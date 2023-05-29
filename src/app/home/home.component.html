@@ -1,8 +1,8 @@
 <!-- inicia secciones. contenido -->
-<section class="grid grid-cols-2 gap-4 justify-between py-10">
+<section class="grid lg:grid-cols-2 max-h-min gap-24 py-10">
     <!-- presentación -->
     <!-- desarrollo de estudios -->
-    <section class="font-bold text-6xl" @viewDevelopment>
+    <section class="h-auto min-w-min max-w-xl font-bold text-6xl" @viewDevelopment>
         <h1 class="bg-violet-700 animate-bounce h-16 hover:bg-violet-500 ">
             Full-Stack.
         </h1>
@@ -23,18 +23,18 @@
         </h3>
     </section>
     <!-- dar estilos para que tenga un alto que abarque casi la altura de la pagina con una imagen de fondo incluyendo la imagen proia -->
-    <section class="grid grid-rows-2 pl-24">
+    <section class="h-auto min-w-min max-w-4xl flex flex-col">
         <!-- dividida en 2 secciones o 2 columnas -->
         <div>
             <!-- desarrollo de habilidades // definición de mi empleabilidad -->
             <!--  -->
             <!-- imagen en derecha junto con tecto inferior -->
-            <img src="../../assets/img/profileIMG.jpg" alt="mi imagen" class="w-max h-auto">
+            <img src={{userData.img}} alt="mi imagen" class="w-max h-auto">
         </div>
         <div class="text-xl font-mono " @viewData>
-            <h1>⇧ I`m Lautaro Garcia.</h1>
-            <h4 class="pl-11">Nickname Lechugaxthz.</h4>
-            <h4 class="pl-20">Full-Stack Developer.</h4>
+            <h1>⇧ I`m {{userData.name}}.</h1>
+            <h4 class="pl-11">Nickname {{userData.nickName}}.</h4>
+            <h4 class="pl-20">{{userData.designation}}.</h4>
             <br />
             <!-- <h6 class="text-center">Passionated about Back-End y Front-End development.</h6> -->
         </div>

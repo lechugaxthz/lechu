@@ -1,8 +1,8 @@
-<nav class="flex items-center justify-between p-2 lg:px-6 w-screen" aria-label="Global">
+<nav class="flex items-center justify-between p-2 lg:px-6" aria-label="Global">
   <!-- breve presentación -->
   <div className="flex justify-between items-center">
     <div class="flex md:flex-col p-4">
-      <span className="font-semibold text-xl dark:text-gray-100">
+      <span className="font-bold text-xl dark:text-gray-100">
         {{userData.name}}
       </span>
       <span className="text-base font-light text-gray-500 dark:text-gray-300">
@@ -15,40 +15,79 @@
     <a href="/" class="{{styleButtonHome}}">Home</a>
     <a href="/about" class="{{styleButtonAbout}}">About</a>
   </div>
-  <!-- probando poner iconos -->
-  <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    iconitos jeje  -->
-    <!-- <a href={userData.socialLinks.linkedin} className="text-base font-normal text-gray-600 dark:text-gray-300">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        className="bi bi-linkedin h-5 w-5" viewBox="0 0 16 16">
-      </svg>
-    </a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a> -->
-<!--   </div> -->
 </nav>
 <!--  -->
 <router-outlet />
 
-<footer class="flex flex-row justify-around px-4 py-3">
-  <section class="p-4">
+<footer class="mx-auto min-w-min max-w-screen-2xl gap-8 flex flex-row justify-around px-4 py-3 pt-11">
+  <section class="flex flex-col items-center justify-around">
+    <p class="p-1 m-3 font-bold">contactos:</p>
+    <div class="flex flex-col items-center">
+      <a href={{userData.socialMedia.gitHubLink}} target="_blank">
+        <i class="fa-brands fa-github fa-2xl h-7 w-7 m-2" style="color: #211F1F;"></i>
+      </a>
+      <a href={{userData.socialMedia.telegramLink}} target="_blank">
+        <i class="fa-brands fa-telegram fa-2xl h-7 w-7 m-2 hover:fa-2xl" style="color: #0088CC;"></i>
+      </a>
+      <a href={{userData.socialMedia.linkedInLink}} target="_blank">
+        <i class="fa-brands fa-linkedin fa-2xl h-7 w-7 m-2" style="color: #006192;"></i>
+      </a>
+      <a href={{userData.socialMedia.whatsAppLink}} target="_blank">
+        <i class="fa-brands fa-square-whatsapp fa-2xl h-7 w-7 m-2" style="color: #4FCE5D;"></i>
+      </a>
+      <a href={{userData.socialMedia.instagramLink}} target="_blank">
+        <i class="fa-brands fa-square-instagram fa-2xl h-7 w-7 m-2" style="color: #F58529;"></i>
+      </a>
+    </div>
+  </section>
+  <section class="">
     <p>algo de texto</p>
     <p>algo de texto</p>
     <p>algo de texto</p>
     <p>algo de texto</p>
   </section>
-  <section class="p-4">
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-  </section>
-  <section class="p-4">
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-    <p>algo de texto</p>
+  <section class="flex justify-center text-center">
+    <div>
+      <form>
+        <div class="grid grid-cols-2">
+          <div class="p-3">
+            <label class="flex text-start">Name</label>
+            <div>
+              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your Name" (change)="dataMail.userName" [value]="">
+            </div>
+          </div>
+          <div class="p-3">
+            <label class="flex text-start">Last Name</label>
+            <div>
+              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your LastName" (change)="dataMail.userLastName" [value]="">
+            </div>
+          </div>
+        </div>
+        <div class="p-3">
+          <label>Mail</label>
+          <div>
+            <input class="border-2 border-fuchsia-500" type="text" placeholder="Referring email" (change)="dataMail.userMail" [value]="">
+          </div>
+        </div>
+        <div class="p-3">
+          <label>Phone Number</label>
+          <div>
+            <input class="border-2 border-fuchsia-500" type="text" placeholder="Contact (optional)" (change)="dataMail.userContactNumber" [value]="">
+          </div>
+        </div>
+        <div class="p-3">
+          <label>Matter</label>
+          <div>
+            <input class="border-2 border-fuchsia-500" type="text" placeholder="issues" (change)="dataMail.mailMatters" [value]="">
+          </div>
+        </div>
+        <div class="p-3">
+          <label>Description</label>
+          <div>
+            <input class="border-2 border-fuchsia-500" type="text" (change)="dataMail.mailContent" [value]="">
+          </div>
+        </div>
+      </form>
+    </div>
   </section>
 </footer>

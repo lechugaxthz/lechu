@@ -10,8 +10,8 @@
 <div
     class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
     <article *ngFor="let project of allProject" class="
-    flex max-w-xl flex-col items-start justify-start
-    border-4 rounded-lg rounded-tl-xl rounded-tr-xl
+    flex max-w-full min-w-min flex-col items-start justify-start
+    border-4 rounded-lg rounded-tl-xl rounded-tr-xl pl-1
     shadow-2xl shadow-rose-500">
         <div class="grid lg:grid-cols-2">
             <div class="grid items-center gap-x-4 text-xs">
@@ -25,35 +25,28 @@
                 </div>
                 <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                     <a href={{project.link}}>
-                        <span class="absolute inset-0"></span>
                         Name: {{project.name}}
                     </a>
                 </h3>
             </div>
-            <img src={{project.img}} class="rounded-xl" />
+            <img src={{project.img}} class="rounded-xl w-fit" />
         </div>
-        <div class="group">
+        <div class="grid grid-cols-1 w-full group max-w-full">
             <div class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                <h3 class="text-sm font-semibold">summary</h3>
+                <h3 class="text-sm font-semibold">Summary</h3>
                 {{project.summary}}
             </div>
-            <div class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 transition-all hover:line-clamp-6">
-                <h3 class="text-sm font-semibold">description</h3>
-                {{project.description}}
+            <br />
+            <div class="flex justify-center">
+                <button type="button" id="open-modal" (click)="openModal(project)"
+                    class=" bg-pink-500 hover:bg-pink-700 text-white font-bold py-1 px-4 rounded mb-3">
+                    About
+                </button>
             </div>
+            <!-- inicio de modal -->
+            <app-modal-project id="project-modal" class={{project.viewAbout}} [projectName]="project.name"
+                [projectAbout]="project.about" [projectTeam]="project.team" [projectClose]="closeModal(project)" />
+            <!-- fin de modal -->
         </div>
-        <!-- <div class="relative mt-8 flex items-center gap-x-4">
-            <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt="" class="h-10 w-10 rounded-full bg-gray-50">
-            <div class="text-sm leading-6">
-                <p class="font-semibold text-gray-900">
-                    <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                    </a>
-                </p>
-                <p class="text-gray-600">Co-Founder / CTO</p>
-            </div>
-        </div> -->
     </article>
 </div>

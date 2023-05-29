@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsNotEmpty, IsObject, IsOptional } from 'class-validator'
+import { IsString, IsNumber, IsNotEmpty, IsObject, IsOptional, IsArray } from 'class-validator'
 
 
 export class MyProjectsDto {
@@ -20,7 +20,7 @@ export class MyProjectsDto {
 
     @IsString()
     @IsNotEmpty()
-    description: string = ''
+    about: string = ''
 
     @IsNotEmpty()
     img: string = ''
@@ -31,7 +31,9 @@ export class MyProjectsDto {
     @IsOptional()
     link?: string | null = null;
 
+    @IsArray()
+    team: { img: string, url: string }[] = [{ img: '', url: '' }]
 
-
-
+    @IsString()
+    viewAbout: string = 'invisible'
 }
