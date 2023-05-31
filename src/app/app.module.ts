@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectCardsComponent } from './home/project-cards/project-cards.component';
 import { ModalProjectComponent } from './home/modal-project/modal-project.component';
+import { ModalMailComponent } from './modal-mail/modal-mail.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ModalProjectComponent } from './home/modal-project/modal-project.compon
     ContactComponent,
     ProjectCardsComponent,
     ModalProjectComponent,
+    ModalMailComponent,
   ],
   imports: [
     BrowserModule,

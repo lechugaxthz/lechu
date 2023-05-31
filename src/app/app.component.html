@@ -1,3 +1,10 @@
+<!-- inicio de emailJs -->
+<script type="text/javascript">
+  (function () {
+    emailjs.init("tW9dSd7fCU5zcn69H");
+  })();
+</script>
+
 <nav class="flex items-center justify-between p-2 lg:px-6" aria-label="Global">
   <!-- breve presentación -->
   <div className="flex justify-between items-center">
@@ -48,44 +55,53 @@
   </section>
   <section class="flex justify-center text-center">
     <div>
-      <form>
+      <form ref="">
         <div class="grid grid-cols-2">
           <div class="p-3">
             <label class="flex text-start">Name</label>
             <div>
-              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your Name" (change)="dataMail.userName" [value]="">
+              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your Name"
+                (change)="dataMail.userName" [value]="">
             </div>
           </div>
           <div class="p-3">
             <label class="flex text-start">Last Name</label>
             <div>
-              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your LastName" (change)="dataMail.userLastName" [value]="">
+              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your LastName"
+                (change)="dataMail.userLastName" [value]="">
             </div>
           </div>
         </div>
         <div class="p-3">
           <label>Mail</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" placeholder="Referring email" (change)="dataMail.userMail" [value]="">
+            <input class="border-2 border-fuchsia-500" type="text" placeholder="Referring email"
+              (change)="dataMail.userMail" [value]="">
           </div>
         </div>
         <div class="p-3">
           <label>Phone Number</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" placeholder="Contact (optional)" (change)="dataMail.userContactNumber" [value]="">
+            <input class="border-2 border-fuchsia-500" type="text" placeholder="Contact (optional)"
+              (change)="dataMail.userContactNumber" [value]="">
           </div>
         </div>
         <div class="p-3">
-          <label>Matter</label>
+          <label>Issues</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" placeholder="issues" (change)="dataMail.mailMatters" [value]="">
+            <input class="border-2 border-fuchsia-500" type="text" placeholder="issues" (change)="dataMail.mailIssues"
+              [value]="">
           </div>
         </div>
         <div class="p-3">
           <label>Description</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" (change)="dataMail.mailContent" [value]="">
+            <textarea class="border-2 border-fuchsia-500" type="text" (change)="dataMail.mailContent"
+              [value]=""></textarea>
           </div>
+          <button type="button" (click)="sendMail()"
+            class=" bg-pink-500 hover:bg-pink-700 text-white font-bold py-1 px-4 rounded mb-3">
+            Send</button>
         </div>
       </form>
     </div>

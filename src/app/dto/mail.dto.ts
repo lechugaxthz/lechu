@@ -20,7 +20,7 @@ export class MailDto {
 
     @IsString({message: 'Matters is required'})
     @IsNotEmpty()
-    mailMatters: string = ''
+    mailIssues: string = ''
 
     @IsString({message: 'Description is required'})
     @IsNotEmpty()
