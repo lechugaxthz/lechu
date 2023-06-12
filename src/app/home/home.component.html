@@ -1,26 +1,32 @@
 <!-- inicia secciones. contenido -->
-<section class="grid lg:grid-cols-2 max-h-min gap-24 py-10">
+<section class="homeMiData z-10 grid sm:grid-cols-1 lg:grid-cols-2 max-h-min gap-24 py-10 px-5">
     <!-- presentación -->
     <!-- desarrollo de estudios -->
-    <section class="h-auto min-w-min max-w-xl font-bold text-6xl" @viewDevelopment>
-        <h1 class="bg-violet-700 animate-bounce h-16 hover:bg-violet-500 ">
+    <section class="h-auto
+        font-bold 
+        sm:text-2xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl" @viewDevelopment>
+        <h1 class="bg-violet-700 animate-bounce hover:bg-violet-500
+        h-auto
+        ">
             Full-Stack.
         </h1>
         <br />
-        <h1 class="bg-purple-700 animate-bounce h-16 hover:bg-purple-500">
+        <h1 class="bg-purple-700 animate-bounce h-auto hover:bg-purple-500">
             Developer.
         </h1>
         <br />
-        <h1 class="bg-fuchsia-700 animate-bounce h-16 hover:bg-fuchsia-500">
+        <h1 class="bg-fuchsia-700 animate-bounce h-auto hover:bg-fuchsia-500">
             Back-End.
         </h1>
         <br />
-        <h1 class="bg-pink-700 animate-bounce h-16 hover:bg-pink-500">
+        <h1 class="bg-pink-700 animate-bounce h-auto hover:bg-pink-500">
             Front-End.
         </h1>
-        <h3 class="animate-pulse text-2xl hover:text-3xl transition-all">
+        <a href="#mediaSection" class="animate-pulse transition-all
+        sm:text-base sm:hover:text-lg  md:text-3xl md:hover:text-4xl lg:text-2xl lg:hover:text-3xl xl:text-3xl xl:hover:text-4xl 2xl:text-4xl 2xl:hover:text-5xl 3xl:text-5xl 3xl:hover:text-6xl
+        ">
             follow in social media ↘
-        </h3>
+        </a>
     </section>
     <!-- dar estilos para que tenga un alto que abarque casi la altura de la pagina con una imagen de fondo incluyendo la imagen proia -->
     <section class="h-auto min-w-min max-w-4xl flex flex-col">
@@ -31,20 +37,60 @@
             <!-- imagen en derecha junto con tecto inferior -->
             <img src={{userData.img}} alt="mi imagen" class="w-max h-auto">
         </div>
-        <div class="text-xl font-mono " @viewData>
+        <div class="sm:text-sm md:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-5xl
+        font-semibold
+        font-mono" @viewData>
             <h1>⇧ I`m {{userData.name}}.</h1>
-            <h4 class="pl-11">Nickname {{userData.nickName}}.</h4>
-            <h4 class="pl-20">{{userData.designation}}.</h4>
+            <h4 class="sm:pl-8 md:pl-10 xl:pl-12 2xl:pl-14 3xl:pl-20">Nickname {{userData.nickName}}.</h4>
+            <h4 class="sm:pl-14 md:pl-16 xl:pl-20 2xl:pl-24 3xl:pl-32">{{userData.designation}}.</h4>
             <br />
             <!-- <h6 class="text-center">Passionated about Back-End y Front-End development.</h6> -->
         </div>
     </section>
 </section>
+
 <!-- texto relacional -->
-<aside class="text-3xl font-light flex justify-center">Passionated about Back-End & Front-End development</aside>
+<aside class="sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-6xl
+font-serif font-normal flex justify-center text-center my-6">Passionated about Back-End & Front-End development</aside>
 <!-- contenido de experiencias -->
+<div class="homeSkils py-11">
+    <div class="px-6">
+        <h2 class="sm:text-base md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-5xl
+        text-center font-bold 
+       ">
+            My development tools
+        </h2>
+<p class="border-b border-gray-200 pt-4"></p>
+        <div class="mt-10 justify-center items-center
+            w-auto
+            grid 
+            sm:grid-cols-3 sm:gap-x-6 sm:gap-y-9
+            md:grid-cols-4 md:gap-x-12 md:gap-y-14
+            lg:grid-cols-5 lg:gap-x-16 lg:gap-y-16
+            xl:grid-cols-5 xl:gap-y-20
+            ">
+            <div *ngFor="let tools of userData.developmentTools" class="flex items-center justify-center">
+                <div [innerHTML]="tools" class="flex
+                sm:h-14 sm:w-14 
+                md:h-16 md:w-16 
+                lg:h-20 lg:w-20 
+                xl:h-24 xl:w-24 
+                2xl:h-32 2xl:w-32 
+                3xl:h-36 3xl:w-36 
+                "></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contenido de experiencia en projectos -->
 <br />
-<section class="p-4">
-    <h1 class="flex justify-center font-bold text-2xl">My Projects</h1>
+<section class="homeProjects z-10 p-4 pt-8">
+    <h1 class="flex justify-center font-bold
+    sm:text-2xl
+    md:text-3xl
+    lg:text-4xl
+    xl:text-5xl
+    3xl:text-6xl
+    ">My Projects</h1>
     <app-project-cards></app-project-cards>
 </section>

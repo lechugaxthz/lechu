@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { trigger, style, transition, animate, state } from '@angular/animations';
 import { MiDataDto } from '../dto/miData.dto';
 import { miData } from '../miData.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,13 @@ import { miData } from '../miData.component';
 export class HomeComponent {
   userData: MiDataDto;
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
     this.userData = miData
+    for (let i = 0; i < this.userData.developmentTools.length; i++) {
+      this.userData.developmentTools[i] = this.sanitizer.bypassSecurityTrustHtml(this.userData.developmentTools[i])
+    }
+
+
   }
+
 }

@@ -17,14 +17,7 @@ export const myProjects: MyProjectsDto[] = [
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
-            /* { img: '', url: '' },
-            { img: '', url: '' },
-            { img: '', url: '' },
-            { img: '', url: '' },
-            { img: '', url: '' },
-            { img: '', url: '' } */
-        ],
-        viewAbout: 'invisible'
+        ]
     },
     {
         id: 2,
@@ -38,8 +31,7 @@ export const myProjects: MyProjectsDto[] = [
         team: [
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` }
-        ],
-        viewAbout: 'invisible'
+        ]
     },
     {
         id: 2,
@@ -50,7 +42,6 @@ export const myProjects: MyProjectsDto[] = [
         img: '',
         carriedOut: 'In Progres',
         link: null,
-        team: [{ img: '', url: '' }],
-        viewAbout: 'invisible'
+        team: [{ img: '', url: '' }]
     }
 ]

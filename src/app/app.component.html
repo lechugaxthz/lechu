@@ -1,109 +1,205 @@
-<!-- inicio de emailJs -->
-<script type="text/javascript">
-  (function () {
-    emailjs.init("tW9dSd7fCU5zcn69H");
-  })();
-</script>
+<!-- init emailJs -->
+<app-init-email-js class="invisible"></app-init-email-js>
 
-<nav class="flex items-center justify-between p-2 lg:px-6" aria-label="Global">
+<nav class="p-2 font-bold
+flex 
+sm:flex-col sm:items-center 
+md:flex-row md:justify-between 
+sm:text-lg
+md:text-xl
+lg:text-2xl
+xl:text-3xl
+2xl:text-4xl pb-6
+3xl:text-6xl
+" aria-label="Global">
   <!-- breve presentación -->
-  <div className="flex justify-between items-center">
-    <div class="flex md:flex-col p-4">
-      <span className="font-bold text-xl dark:text-gray-100">
-        {{userData.name}}
-      </span>
-      <span className="text-base font-light text-gray-500 dark:text-gray-300">
-        {{userData.designation}}
-      </span>
-    </div>
-  </div>
+  <h1>
+    {{userData.name}}
+  </h1>
+  <h1>
+    {{userData.designation}}
+  </h1>
   <!-- rutas -->
-  <div class="hidden lg:flex lg:gap-x-12 p-4">
+  <!-- <div class="hidden lg:flex lg:gap-x-12 p-4">
     <a href="/" class="{{styleButtonHome}}">Home</a>
     <a href="/about" class="{{styleButtonAbout}}">About</a>
-  </div>
+  </div> -->
 </nav>
 <!--  -->
 <router-outlet />
 
-<footer class="mx-auto min-w-min max-w-screen-2xl gap-8 flex flex-row justify-around px-4 py-3 pt-11">
-  <section class="flex flex-col items-center justify-around">
-    <p class="p-1 m-3 font-bold">contactos:</p>
-    <div class="flex flex-col items-center">
-      <a href={{userData.socialMedia.gitHubLink}} target="_blank">
-        <i class="fa-brands fa-github fa-2xl h-7 w-7 m-2" style="color: #211F1F;"></i>
-      </a>
-      <a href={{userData.socialMedia.telegramLink}} target="_blank">
-        <i class="fa-brands fa-telegram fa-2xl h-7 w-7 m-2 hover:fa-2xl" style="color: #0088CC;"></i>
-      </a>
-      <a href={{userData.socialMedia.linkedInLink}} target="_blank">
-        <i class="fa-brands fa-linkedin fa-2xl h-7 w-7 m-2" style="color: #006192;"></i>
-      </a>
-      <a href={{userData.socialMedia.whatsAppLink}} target="_blank">
-        <i class="fa-brands fa-square-whatsapp fa-2xl h-7 w-7 m-2" style="color: #4FCE5D;"></i>
-      </a>
-      <a href={{userData.socialMedia.instagramLink}} target="_blank">
-        <i class="fa-brands fa-square-instagram fa-2xl h-7 w-7 m-2" style="color: #F58529;"></i>
-      </a>
-    </div>
-  </section>
-  <section class="">
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-    <p>algo de texto</p>
-    <p>algo de texto</p>
+<footer id="mediaSection" style="background-color: #2c0735;" class="mx-auto min-w-min w-full gap-8 grid lg:grid-cols-2 justify-around px-4 py-3 pt-11
+
+">
+  <section class="grid md:grid-cols-2 max-h-min gap-4">
+    <section class="flex flex-col items-center justify-start">
+      <p class="p-1 m-3 font-bold underline decoration-fuchsia-500
+      sm:text-base
+      md:text-lg
+      lg:text-xl
+      xl:text-2xl
+      2xl:text-3xl
+      3xl:text-4xl
+      ">Contactos:</p>
+      <div class="grid 
+      sm:grid-cols-2
+      ">
+        <div *ngFor="let social of userData.socialMedia">
+          <a href={{social.url}} target="_blank">
+            <div [innerHTML]="social.icon" class="flex 
+            sm:h-12 sm:w-12 sm:p-1
+            md:h-14 md:w-14 md:p-2
+            lg:h-20 lg:w-20 lg:p-4
+            xl:h-24 xl:w-24 xl:p-5
+            2xl:h-28 2xl:w-28 2xl:p-7
+            3xl:h-32 3xl:w-32 3xl:p-7
+            "></div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col justify-start font-medium 
+    sm:text-base
+    md:text-lg
+    lg:text-xl
+    xl:text-2xl
+    2xl:text-3xl
+    3xl:text-4xl
+    ">
+      <p class="p-1 m-3 font-bold underline decoration-fuchsia-500
+      sm:text-base
+      md:text-lg
+      lg:text-xl
+      xl:text-2xl
+      2xl:text-3xl
+      3xl:text-4xl
+      ">Document:</p>
+      <div class="flex flex-col md:justify-evenly">
+        <a class=" underline decoration-cyan-500
+        sm:py-2 md:py-0
+        " href="../assets/docs/Lautaro Garcia CV.pdf" download>Mi CV</a>
+        <a class=" underline decoration-cyan-500
+        sm:py-2 md:py-0
+        " href="../assets/docs/Certificado de graduación.pdf" download>Certificate Henry</a>
+        <a class=" underline decoration-cyan-500
+        sm:py-2 md:py-0
+        " href="../assets/docs/Certificado de Teaching Assistant.pdf" download>Certificate Teaching Assistant</a>
+      </div>
+    </section>
   </section>
   <section class="flex justify-center text-center">
     <div>
-      <form ref="">
-        <div class="grid grid-cols-2">
+      <div class="font-bold underline decoration-fuchsia-500
+      sm:text-base
+      md:text-lg
+      lg:text-xl
+      xl:text-2xl
+      2xl:text-3xl
+      3xl:text-4xl
+      ">Email Form:</div>
+      <form (submit)="sendEmail($event)">
+        <div class="grid lg:grid-cols-2">
           <div class="p-3">
-            <label class="flex text-start">Name</label>
+            <label class="font-semibold
+            sm:text-base
+            lg:text-lg
+            xl:text-xl
+            2xl:text-2xl
+            3xl:text-3xl
+            ">Name</label>
             <div>
-              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your Name"
-                (change)="dataMail.userName" [value]="">
+              <input name="userName" type="text" placeholder="Your Name" (change)="onNameChange($event.target)"
+                [value]="dataMail.userName" class="border-2 border-fuchsia-500
+                sm:h-8 w-max
+                lg:h-9
+                ">
             </div>
           </div>
           <div class="p-3">
-            <label class="flex text-start">Last Name</label>
+            <label class="font-semibold
+                  sm:text-base
+                  lg:text-lg
+                  xl:text-xl
+                  2xl:text-2xl
+                  3xl:text-3xl
+                  ">Last Name</label>
             <div>
-              <input class="border-2 border-fuchsia-500" type="text" placeholder="Your LastName"
-                (change)="dataMail.userLastName" [value]="">
+              <input name="userLastName" type="text" placeholder="Your LastName"
+                (change)="onLastNameChange($event.target)" [value]="dataMail.userLastName" class="border-2 border-fuchsia-500
+                sm:h-8 w-max
+                lg:h-9
+                ">
             </div>
           </div>
         </div>
         <div class="p-3">
-          <label>Mail</label>
+          <label class="font-semibold
+                sm:text-base
+                lg:text-lg
+                xl:text-xl
+                2xl:text-2xl
+                3xl:text-3xl
+                ">Mail</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" placeholder="Referring email"
-              (change)="dataMail.userMail" [value]="">
+            <input name="userMail" type="text" placeholder="Referring email" (change)="onMailChange($event.target)"
+              [value]="dataMail.userMail" class="border-2 border-fuchsia-500
+              sm:h-8 w-max
+              lg:h-9
+              ">
           </div>
         </div>
         <div class="p-3">
-          <label>Phone Number</label>
+          <label class="font-semibold
+                sm:text-base
+                lg:text-lg
+                xl:text-xl
+                2xl:text-2xl
+                3xl:text-3xl
+                ">Phone Number</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" placeholder="Contact (optional)"
-              (change)="dataMail.userContactNumber" [value]="">
+            <input name="userContactNumber" type="text" placeholder="(optional)"
+              (change)="onContactNumberChange($event.target)" [value]="dataMail.userContactNumber" class="border-2 border-fuchsia-500
+              sm:h-8 w-max
+              lg:h-9
+              ">
           </div>
         </div>
         <div class="p-3">
-          <label>Issues</label>
+          <label class="font-semibold
+                sm:text-base
+                lg:text-lg
+                xl:text-xl
+                2xl:text-2xl
+                3xl:text-3xl
+                ">Issues</label>
           <div>
-            <input class="border-2 border-fuchsia-500" type="text" placeholder="issues" (change)="dataMail.mailIssues"
-              [value]="">
+            <input name="mailIssues" type="text" placeholder="issues" (change)="onIssuesChange($event.target)"
+              [value]="dataMail.mailIssues" class="border-2 border-fuchsia-500
+              sm:h-8 w-max
+              lg:h-9
+              ">
           </div>
         </div>
         <div class="p-3">
-          <label>Description</label>
+          <label class="font-semibold
+                sm:text-base
+                lg:text-lg
+                xl:text-xl
+                2xl:text-2xl
+                3xl:text-3xl
+                ">Description</label>
           <div>
-            <textarea class="border-2 border-fuchsia-500" type="text" (change)="dataMail.mailContent"
-              [value]=""></textarea>
+            <textarea name="mailContent" type="text" (change)="onContentChange($event.target)"
+              [value]="dataMail.mailContent" class="border-2 border-fuchsia-500
+              sm:h-28 w-full
+              lg:w-4/5
+              "></textarea>
           </div>
-          <button type="button" (click)="sendMail()"
-            class=" bg-pink-500 hover:bg-pink-700 text-white font-bold py-1 px-4 rounded mb-3">
+          <button type="submit" class=" bg-pink-500 hover:bg-pink-700 text-white font-bold py-1 px-4 rounded mb-3">
             Send</button>
         </div>
       </form>
     </div>
+    <app-modal-mail class={{thisMessage.statusModal}} [modalData]="thisMessage"></app-modal-mail>
   </section>
 </footer>

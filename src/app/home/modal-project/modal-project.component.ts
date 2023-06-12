@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ToViewProjectDetailDto } from '../project-cards/dto/projextToView.dto';
 
 @Component({
   selector: 'app-modal-project',
@@ -6,15 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./modal-project.component.css']
 })
 export class ModalProjectComponent {
-  @Input() projectName: string
-  @Input() projectAbout: string
-  @Input() projectTeam: { img: string, url: string }[]
+  @Input() project: ToViewProjectDetailDto
   @Input() projectClose: Function
 
   constructor() {
-    this.projectName = ''
-    this.projectAbout = ''
-    this.projectTeam = [{ img: '', url: '' }]
+    this.project = { name: '', about: '', team: [{ img: '', url: '' }] }
     this.projectClose = () => { }
   }
 

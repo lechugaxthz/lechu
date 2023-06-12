@@ -1,29 +1,31 @@
-<!-- <section class="grid grid-cols-2 gap-4 place-content-stretch justify-between">
-    <div class="flex flex-col min-w-fit h-56 p-2 m-2" *ngFor="let project of allProject">
-        <img src={{project.img}} />
-        <h2>{{project.name}}</h2>
-        <h4>{{project.summary}}</h4>
-        <h4>{{project.carriedOut}}</h4>
-    </div>
-</section> -->
-
 <div
     class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-    <article *ngFor="let project of allProject" class="
+    <article *ngFor="let project of allProject" class="projectCardBg
     flex max-w-full min-w-min flex-col items-start justify-start
     border-4 rounded-lg rounded-tl-xl rounded-tr-xl pl-1
     shadow-2xl shadow-rose-500">
         <div class="grid lg:grid-cols-2">
-            <div class="grid items-center gap-x-4 text-xs">
+            <div class="grid items-center gap-x-4
+            sm:text-xs
+            md:text-sm
+            lg:text-xs
+            xl:text-sm
+            3xl:text-xl
+            ">
                 <div class="flex items-center">
-
-                    <time datetime="2020-03-16" class="text-gray-500">{{project.carriedOut}}</time>
+                    <time datetime="2020-03-16">{{project.carriedOut}}</time>
                     <p
-                        class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                        class="ml-2 relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 transition hover:bg-gray-800 hover:text-gray-100">
                         {{project.theme}}
                     </p>
                 </div>
-                <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <h3 class="mt-3 font-semibold leading-6 text-white group-hover:text-gray-600
+                sm:text-lg
+                md:text-2xl
+                lg:text-xl
+                xl:text-2xl
+                3xl:text-4xl
+                ">
                     <a href={{project.link}}>
                         Name: {{project.name}}
                     </a>
@@ -32,8 +34,14 @@
             <img src={{project.img}} class="rounded-xl w-fit" />
         </div>
         <div class="grid grid-cols-1 w-full group max-w-full">
-            <div class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                <h3 class="text-sm font-semibold">Summary</h3>
+            <div class="mt-5 leading-6 text-white
+            sm:text-sm
+            md:text-base
+            lg:text-sm
+            xl:text-lg
+            3xl:text-xl
+            ">
+                <h3 class="font-semibold">Summary</h3>
                 {{project.summary}}
             </div>
             <br />
@@ -44,8 +52,7 @@
                 </button>
             </div>
             <!-- inicio de modal -->
-            <app-modal-project id="project-modal" class={{project.viewAbout}} [projectName]="project.name"
-                [projectAbout]="project.about" [projectTeam]="project.team" [projectClose]="closeModal(project)" />
+            <app-modal-project id="project-modal" class={{visibilityModal}} [project]="toViewProjectDetail" [projectClose]="closeModal(project)" />
             <!-- fin de modal -->
         </div>
     </article>
