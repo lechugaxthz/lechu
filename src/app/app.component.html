@@ -110,7 +110,7 @@ xl:text-3xl
             ">Name</label>
             <div>
               <input name="userName" type="text" placeholder="Your Name" (change)="onNameChange($event.target)"
-                [value]="dataMail.userName" class="border-2 border-fuchsia-500
+                [value]="dataMail.userName" class="text-slate-900 border-2 border-fuchsia-500
                 sm:h-8 w-max
                 lg:h-9
                 ">
@@ -126,7 +126,7 @@ xl:text-3xl
                   ">Last Name</label>
             <div>
               <input name="userLastName" type="text" placeholder="Your LastName"
-                (change)="onLastNameChange($event.target)" [value]="dataMail.userLastName" class="border-2 border-fuchsia-500
+                (change)="onLastNameChange($event.target)" [value]="dataMail.userLastName" class="text-slate-900 border-2 border-fuchsia-500
                 sm:h-8 w-max
                 lg:h-9
                 ">
@@ -143,7 +143,7 @@ xl:text-3xl
                 ">Mail</label>
           <div>
             <input name="userMail" type="text" placeholder="Referring email" (change)="onMailChange($event.target)"
-              [value]="dataMail.userMail" class="border-2 border-fuchsia-500
+              [value]="dataMail.userMail" class="text-slate-900 border-2 border-fuchsia-500
               sm:h-8 w-max
               lg:h-9
               ">
@@ -159,7 +159,7 @@ xl:text-3xl
                 ">Phone Number</label>
           <div>
             <input name="userContactNumber" type="text" placeholder="(optional)"
-              (change)="onContactNumberChange($event.target)" [value]="dataMail.userContactNumber" class="border-2 border-fuchsia-500
+              (change)="onContactNumberChange($event.target)" [value]="dataMail.userContactNumber" class="text-slate-900 border-2 border-fuchsia-500
               sm:h-8 w-max
               lg:h-9
               ">
@@ -175,7 +175,7 @@ xl:text-3xl
                 ">Issues</label>
           <div>
             <input name="mailIssues" type="text" placeholder="issues" (change)="onIssuesChange($event.target)"
-              [value]="dataMail.mailIssues" class="border-2 border-fuchsia-500
+              [value]="dataMail.mailIssues" class="text-slate-900 border-2 border-fuchsia-500
               sm:h-8 w-max
               lg:h-9
               ">
@@ -191,7 +191,7 @@ xl:text-3xl
                 ">Description</label>
           <div>
             <textarea name="mailContent" type="text" (change)="onContentChange($event.target)"
-              [value]="dataMail.mailContent" class="border-2 border-fuchsia-500
+              [value]="dataMail.mailContent" class="text-slate-900 border-2 border-fuchsia-500
               sm:h-28 w-full
               lg:w-4/5
               "></textarea>

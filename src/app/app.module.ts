@@ -7,7 +7,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectCardsComponent } from './home/project-cards/project-cards.component';
 import { ModalProjectComponent } from './home/modal-project/modal-project.component';
@@ -19,7 +18,6 @@ import { InitEmailJsComponent } from './init-email-js/init-email-js.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent,
     ProjectCardsComponent,
     ModalProjectComponent,
     ModalMailComponent,
