@@ -5,7 +5,6 @@ import { miData } from './miData.component';
 
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { DomSanitizer } from '@angular/platform-browser';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-root',
