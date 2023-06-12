@@ -3,7 +3,7 @@
 
 <nav class="p-2 font-bold
 flex 
-sm:flex-col sm:items-center 
+xsm:flex-col xsm:items-center 
 md:flex-row md:justify-between 
 sm:text-lg
 md:text-xl
@@ -28,7 +28,7 @@ xl:text-3xl
 <!--  -->
 <router-outlet />
 
-<footer id="mediaSection" style="background-color: #2c0735;" class="mx-auto min-w-min w-full gap-8 grid lg:grid-cols-2 justify-around px-4 py-3 pt-11
+<footer id="mediaSection" style="background-color: #2c0735;" class="mt-5 mx-auto min-w-min w-full gap-8 grid lg:grid-cols-2 justify-around px-4 py-3 pt-11
 
 ">
   <section class="grid md:grid-cols-2 max-h-min gap-4">
@@ -42,17 +42,18 @@ xl:text-3xl
       3xl:text-4xl
       ">Contactos:</p>
       <div class="grid 
-      sm:grid-cols-2
+      grid-cols-2 gap-4 xl:gap-8
       ">
         <div *ngFor="let social of userData.socialMedia">
           <a href={{social.url}} target="_blank">
-            <div [innerHTML]="social.icon" class="flex 
-            sm:h-12 sm:w-12 sm:p-1
-            md:h-14 md:w-14 md:p-2
-            lg:h-20 lg:w-20 lg:p-4
-            xl:h-24 xl:w-24 xl:p-5
-            2xl:h-28 2xl:w-28 2xl:p-7
-            3xl:h-32 3xl:w-32 3xl:p-7
+            <div [innerHTML]="social.icon" class="
+            xsm:h-10 xsm:w-10
+            sm:h-10 sm:w-10
+            md:h-12 md:w-12
+            lg:h-14 lg:w-14
+            xl:h-16 xl:w-16
+            2xl:h-20 2xl:w-20
+            3xl:h-24 3xl:w-24
             "></div>
           </a>
         </div>
@@ -66,7 +67,7 @@ xl:text-3xl
     2xl:text-3xl
     3xl:text-4xl
     ">
-      <p class="p-1 m-3 font-bold underline decoration-fuchsia-500
+      <p class="p-1 m-3 font-bold underline decoration-fuchsia-500 flex justify-center items-center
       sm:text-base
       md:text-lg
       lg:text-xl
@@ -76,18 +77,18 @@ xl:text-3xl
       ">Document:</p>
       <div class="flex flex-col md:justify-evenly">
         <a class=" underline decoration-cyan-500
-        sm:py-2 md:py-0
+        xsm:py-2 md:py-4
         " href="../assets/docs/Lautaro Garcia CV.pdf" download>Mi CV</a>
         <a class=" underline decoration-cyan-500
-        sm:py-2 md:py-0
+        xsm:py-2 md:py-4
         " href="../assets/docs/Certificado de graduación.pdf" download>Certificate Henry</a>
         <a class=" underline decoration-cyan-500
-        sm:py-2 md:py-0
+        xsm:py-2 md:py-4
         " href="../assets/docs/Certificado de Teaching Assistant.pdf" download>Certificate Teaching Assistant</a>
       </div>
     </section>
   </section>
-  <section class="flex justify-center text-center">
+  <section class="flex justify-center text-center" style="border:solid 2px; backdrop-filter: blur(10px); background-color: rgba(124, 29, 112, 0.322) ">
     <div>
       <div class="font-bold underline decoration-fuchsia-500
       sm:text-base

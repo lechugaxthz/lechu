@@ -14,9 +14,13 @@ export const myProjects: MyProjectsDto[] = [
         link: `https://emprendar-front.vercel.app`,
         team: [
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
-            { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
-            { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
-            { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
+            { img: thisImg.src = '../../../assets/img/team-img/Jony.jpg', url: `https://www.linkedin.com/in/jonnyhz/` },
+            { img: thisImg.src = '../../../assets/img/team-img/Nachito.jpg', url: `https://www.linkedin.com/in/juanarguello02/` },
+            { img: thisImg.src = '../../../assets/img/team-img/Pedro.jpg', url: `https://www.linkedin.com/in/pedromidueno/` },
+            { img: thisImg.src = '../../../assets/img/team-img/Sandy.jpg', url: `https://www.linkedin.com/in/sandy-milena-pesta%C3%B1a-d%C3%ADaz-234887222/` },
+            { img: thisImg.src = '../../../assets/img/team-img/Santi.jpg', url: `https://www.linkedin.com/in/santiago-allvarez-83a432223/` },
+            { img: thisImg.src = '../../../assets/img/team-img/Diego.jpg', url: `https://www.linkedin.com/in/diego-araujo-dev/?originalSubdomain=ar` },
+            { img: thisImg.src = '../../../assets/img/team-img/Mauro.jpg', url: `https://portfolio-dev-mauromoyano.vercel.app/` },
         ]
     },
     {
@@ -30,18 +34,6 @@ export const myProjects: MyProjectsDto[] = [
         link: null,
         team: [
             { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` },
-            { img: thisImg.src = '../../../assets/img/team-img/me.jpg', url: `https://www.linkedin.com/in/garcialautaro/` }
         ]
-    },
-    {
-        id: 2,
-        theme: '',
-        name: 'Wine Cellar',
-        summary: 'Proyecto de promoción y presentación de vinos, diseñado específicamente para impulsar el crecimiento de un emprendimiento local en el sector vitivinícola.',
-        about: 'Wine Cellar (nombre provisional) es un proyecto dedicado a la presentación integral del catálogo de vinos disponibles en un establecimiento local. Mediante esta plataforma, los usuarios podrán acceder a información detallada sobre las características destacadas de cada vino, así como verificar la disponibilidad de stock. Además, se ofrecerá la opción de realizar compras directamente a través del sitio en un futuro cercano.',
-        img: '',
-        carriedOut: 'In Progres',
-        link: null,
-        team: [{ img: '', url: '' }]
     }
 ]

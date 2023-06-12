@@ -4,7 +4,13 @@
     <!-- desarrollo de estudios -->
     <section class="h-auto
         font-bold 
-        sm:text-2xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl" @viewDevelopment>
+        xsm:text-2xl 
+        sm:text-2xl 
+        md:text-6xl 
+        lg:text-6xl 
+        xl:text-7xl 
+        2xl:text-8xl 
+        3xl:text-9xl" @viewDevelopment>
         <h1 class="bg-violet-700 animate-bounce hover:bg-violet-500
         h-auto
         ">
@@ -23,7 +29,7 @@
             Front-End.
         </h1>
         <a href="#mediaSection" class="animate-pulse transition-all
-        sm:text-base sm:hover:text-lg  md:text-3xl md:hover:text-4xl lg:text-2xl lg:hover:text-3xl xl:text-3xl xl:hover:text-4xl 2xl:text-4xl 2xl:hover:text-5xl 3xl:text-5xl 3xl:hover:text-6xl
+        xsm:text-base sm:text-base sm:hover:text-lg  md:text-3xl md:hover:text-4xl lg:text-2xl lg:hover:text-3xl xl:text-3xl xl:hover:text-4xl 2xl:text-4xl 2xl:hover:text-5xl 3xl:text-5xl 3xl:hover:text-6xl
         ">
             follow in social media ↘
         </a>
@@ -64,6 +70,7 @@ font-serif font-normal flex justify-center text-center my-6">Passionated about B
         <div class="mt-10 justify-center items-center
             w-auto
             grid 
+            xsm:grid-cols-2 xsm:gap-x-4 xsm:gap-y-6
             sm:grid-cols-3 sm:gap-x-6 sm:gap-y-9
             md:grid-cols-4 md:gap-x-12 md:gap-y-14
             lg:grid-cols-5 lg:gap-x-16 lg:gap-y-16
@@ -71,6 +78,7 @@ font-serif font-normal flex justify-center text-center my-6">Passionated about B
             ">
             <div *ngFor="let tools of userData.developmentTools" class="flex items-center justify-center">
                 <div [innerHTML]="tools" class="flex
+                xsm:h-14 xsm:w-14 
                 sm:h-14 sm:w-14 
                 md:h-16 md:w-16 
                 lg:h-20 lg:w-20 
